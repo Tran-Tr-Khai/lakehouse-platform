@@ -1,2 +1,2 @@
-from . import bronze, silver
+from . import bronze, silver, gold
 

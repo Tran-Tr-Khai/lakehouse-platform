@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 
 import dagster as dg
 
-from .assets import bronze, silver
+from .assets import bronze, silver, gold
 from .io_manager import MinioIOManager
 from .resources import MinioResource, SparkResource
 
@@ -28,7 +28,7 @@ spark_resource = SparkResource(
 
 
 defs = dg.Definitions(
-    assets=dg.load_assets_from_modules([bronze, silver]),
+    assets=dg.load_assets_from_modules([bronze, silver, gold]),
     resources={
         "minio_io": MinioIOManager(
             minio=minio_resource,
